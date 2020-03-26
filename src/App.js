@@ -3,8 +3,18 @@ import './App.css';
 import {useForm} from 'react-hook-form'
 
 function App() {
-  const { register, handleSubmit, watch, errors } = useForm()
-  const onSubmit = data => { console.log(data) }
+  const { register, handleSubmit, watch, errors } = useForm();
+  const API_URL=process.env.URL || 'http://localhost:5000/mew'
+  const onSubmit = data => { 
+    console.log(data)
+    fetch(API_URL,{
+      method:'POST',
+      body:data,
+      headers:{
+        'contect-type':'application/json'
+      }
+    })
+   }
   return (
     <div className="App">
       <header className="App-header">
