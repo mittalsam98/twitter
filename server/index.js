@@ -19,13 +19,14 @@ mongoose.connect(process.env.MONGO_URI, {
     console.log(err)
 });
 
+const Tweets = mongoose.model('Tweets', { name: String,tweets:String });
 
 
-app.get('/',(req,res)=>{
-    res.json({
-        msg:"Hello World"
-    })
-})
+// app.get('/',(req,res)=>{
+//     res.json({
+//         msg:"Hello World"
+//     })
+// })
 
 
 app.post('/mew',(req,res)=>{
@@ -33,7 +34,9 @@ const mew={
     name:req.body.name.toString(),
     tweets:req.body.tweets.toString()
 }
-
+const tweet = new Tweets(mew);
+tweet.save().then((createdTweets) => res.json(createdTweets));
+console.log(mew)
 })
 
 const PORT= process.env.PORT|| 5000;

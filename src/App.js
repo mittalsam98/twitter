@@ -8,7 +8,7 @@ function App() {
   const onSubmit = data => { 
     console.log(data)
     fetch(API_URL,{
-      method:'POST',
+      method:'POST',a
       body:JSON.stringify(data),
       headers:{
         'content-type':'application/json'
