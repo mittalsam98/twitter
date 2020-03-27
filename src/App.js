@@ -9,7 +9,7 @@ function App() {
     console.log(data)
     fetch(API_URL,{
       method:'POST',
-      body:data,
+      body:JSON.stringify(data),
       headers:{
         'contect-type':'application/json'
       }
