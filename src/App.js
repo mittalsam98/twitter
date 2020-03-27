@@ -11,7 +11,7 @@ function App() {
       method:'POST',
       body:JSON.stringify(data),
       headers:{
-        'contect-type':'application/json'
+        'content-type':'application/json'
       }
     })
    }
