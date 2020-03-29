@@ -66,7 +66,7 @@ function App() {
            <p>{info.tweets}</p>
           </div>
         )
-      })}
+      }).reverse()}
     </div>
   );
 }
