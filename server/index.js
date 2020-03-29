@@ -16,7 +16,8 @@ mongoose.connect(process.env.MONGO_URI, {
 }).then(()=>{
     console.log("Db connected successfully")
 }).catch((err)=>{
-    console.log(err)
+    // console.log(err)
+    res.send(err)
 });
 
 const Tweets = mongoose.model('Tweets', { name: String,tweets:String });

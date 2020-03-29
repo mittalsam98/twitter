@@ -12,16 +12,13 @@ function App() {
     const mew=await fetch(API_URL)
                    .then((res)=>res.json())
                    .then(res=>{
-                     console.log(res)
                      return res
                      });
-                     console.log(mew);
                      setTweets(mew)
   }
 
   ///////////////////////////// submit //////////////////////////////////
   const onSubmit = data => { 
-    console.log("onsubmit",data);
     reset();
     fetch(API_URL,{
       method:'POST',
@@ -39,8 +36,6 @@ function App() {
       getAPI();
    },[])
 
-  //  console.log("2 ",tweetss)
-  //  console.log("3 ")
 
 ////////////////////////////// return function ///////////////////////
   return (
