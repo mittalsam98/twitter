@@ -28,6 +28,12 @@ const Tweets = mongoose.model('Tweets', { name: String,tweets:String });
 //     })
 // })
 
+app.get('/mew',(req,res)=>{
+    Tweets.find().exec((err,user)=>{
+        return  res.json(user)
+    })
+    
+})
 
 app.post('/mew',(req,res)=>{
 const mew={
@@ -36,7 +42,7 @@ const mew={
 }
 const tweet = new Tweets(mew);
 tweet.save().then((createdTweets) => res.json(createdTweets));
-console.log(mew)
+// console.log(mew)
 })
 
 const PORT= process.env.PORT|| 5000;
