@@ -3,7 +3,7 @@ import './App.css';
 import {useForm} from 'react-hook-form'
 
 function App() {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, errors,reset } = useForm();
   const API_URL=process.env.URL || 'http://localhost:5000/mew';
   const [tweetss, setTweets] = useState([]);
   
@@ -22,6 +22,7 @@ function App() {
   ///////////////////////////// submit //////////////////////////////////
   const onSubmit = data => { 
     console.log("onsubmit",data);
+    reset();
     fetch(API_URL,{
       method:'POST',
       body:JSON.stringify(data),
